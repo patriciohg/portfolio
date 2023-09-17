@@ -46,7 +46,6 @@ const AchievementsSection = () => {
                   includeComma
                   animateToNumber={parseInt(achievement.value)}
                   locale="en-US"
-                  className="text-white text-4xl font-bold"
                   configs={(_, index) => {
                     return {
                       mass: 1,

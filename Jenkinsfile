@@ -46,7 +46,7 @@ pipeline {
                     }
                 }
                 sh """
-                    docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 80:80 $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+                    docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 3000:80 $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
                 """
             }
         }

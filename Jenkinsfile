@@ -4,7 +4,7 @@ pipeline {
         IMAGE_NAME = 'portfolio'
         IMAGE_TAG = 'latest'
         DOCKER_USERNAME = 'patriciohg'
-        DOCKER_PASSWORD = 'pandacanibal1'
+        DOCKER_PASSWORD = 'DOCKER_PASSWORD'
         CONTAINER_NAME = 'portfolio_container'
         NETWORK_NAME = 'nginx_network'
     }
@@ -26,7 +26,9 @@ pipeline {
         }
         stage('Login') {
             steps {
-                sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                }
             }
         }
         stage('Push to Registry') {

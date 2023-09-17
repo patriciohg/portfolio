@@ -6,7 +6,7 @@ WORKDIR /app
 COPY portfolio/package*.json ./
 
 RUN npm install
-COPY portfolio/ /portfolio/
+COPY portfolio/ .
 COPY portfolio/public/ /portfolio/public/
 
 RUN npm run build

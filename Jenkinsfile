@@ -4,7 +4,7 @@ pipeline {
         IMAGE_NAME = 'portfolio'
         IMAGE_TAG = 'latest'
         DOCKER_USERNAME = 'patriciohg'
-        DOCKER_PASSWORD = 'DOCKER_PASSWORD'
+        DOCKER_PASSWORD = 'pandacanibal1'
         CONTAINER_NAME = 'portfolio_container'
         NETWORK_NAME = 'nginx_network'
     }

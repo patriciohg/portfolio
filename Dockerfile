@@ -3,9 +3,10 @@ FROM node:18-alpine as builder
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm ci
-COPY . .
+COPY portfolio/package*.json ./
+
+RUN npm install
+COPY portfolio/ .
 RUN npm run build
 RUN npm run export
 
@@ -15,7 +16,7 @@ FROM nginx:alpine
 # Copiar la versión estática generada a la ruta de contenido de NGINX
 COPY --from=builder /app/out /usr/share/nginx/html
 
-# Opcional: Si tienes una configuración personalizada de NGINX, también puedes copiarla
+# 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

@@ -7,6 +7,8 @@ COPY portfolio/package*.json ./
 
 RUN npm install
 COPY portfolio/ .
+COPY portfolio/public/ /portfolio/public/
+
 RUN npm run build
 RUN npm run export
 

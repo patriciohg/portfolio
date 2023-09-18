@@ -1,6 +1,5 @@
 "use client";
 import React, { useTransition, useState } from "react";
-import Image from "next/image";
 import TabButton from "../TabButton/TabButton";
 
 const TAB_DATA: Tabdata[] = [
@@ -38,10 +37,10 @@ const TAB_DATA: Tabdata[] = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Microsoft Certified: Azure Fundamentals<a href="https://www.credly.com/badges/807841e6-dcb0-4f9e-9913-dae744454127" target="__blank">View Credential</a></li>
-        <li>JavaScript Algorithms and Data Structures<a href="https://www.freecodecamp.org/certification/Patriciohg/javascript-algorithms-and-data-structures" target="__blank">View Credential</a></li>
-        <li>Programming with JavaScript <a href="https://coursera.org/verify/EAUTV5UCQPSS" target="__blank">View Credential</a></li>
-        <li>Scrum Foundations <a href="https://www.credly.com/badges/1cc4b6a6-2f97-44c8-ac58-d605b76d9625/public_url" target="__blank">View Credential</a></li>
+        <li><a href="https://www.credly.com/badges/807841e6-dcb0-4f9e-9913-dae744454127" target="__blank">Microsoft Certified: Azure Fundamentals</a></li>
+        <li><a href="https://www.freecodecamp.org/certification/Patriciohg/javascript-algorithms-and-data-structures" target="__blank">JavaScript Algorithms and Data Structures </a></li>
+        <li><a href="https://coursera.org/verify/EAUTV5UCQPSS" target="__blank">Programming with JavaScript</a></li>
+        <li><a href="https://www.credly.com/badges/1cc4b6a6-2f97-44c8-ac58-d605b76d9625/public_url" target="__blank">Scrum Foundations</a></li>
       </ul>
     ),
   },

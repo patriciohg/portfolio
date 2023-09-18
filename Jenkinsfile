@@ -26,7 +26,9 @@ pipeline {
         }
         stage('Login') {
             steps {
-                sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                }
             }
         }
         stage('Push to Registry') {
@@ -44,7 +46,7 @@ pipeline {
                     }
                 }
                 sh """
-                    docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 80:80 $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+                    docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 3000:80 $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
                 """
             }
         }

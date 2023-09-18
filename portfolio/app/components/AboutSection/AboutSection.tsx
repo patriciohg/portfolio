@@ -9,11 +9,16 @@ const TAB_DATA: Tabdata[] = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
+        <li>.NET Core</li>
+        <li>.NET Framework</li>
         <li>Node.js</li>
         <li>Express</li>
+        <li>SQL Server</li>
+        <li>MongoDB</li>
         <li>PostgreSQL</li>
         <li>Sequelize</li>
         <li>JavaScript</li>
+        <li>TypeScript</li>
         <li>React</li>
       </ul>
     ),
@@ -23,8 +28,8 @@ const TAB_DATA: Tabdata[] = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Computer Science Engineer</li>
+        <li>Universidad de Valparaíso, Chile</li>
       </ul>
     ),
   },
@@ -33,8 +38,10 @@ const TAB_DATA: Tabdata[] = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Microsoft Certified: Azure Fundamentals<a href="https://www.credly.com/badges/807841e6-dcb0-4f9e-9913-dae744454127" target="__blank">View Credential</a></li>
+        <li>JavaScript Algorithms and Data Structures<a href="https://www.freecodecamp.org/certification/Patriciohg/javascript-algorithms-and-data-structures" target="__blank">View Credential</a></li>
+        <li>Programming with JavaScript <a href="https://coursera.org/verify/EAUTV5UCQPSS" target="__blank">View Credential</a></li>
+        <li>Scrum Foundations <a href="https://www.credly.com/badges/1cc4b6a6-2f97-44c8-ac58-d605b76d9625/public_url" target="__blank">View Credential</a></li>
       </ul>
     ),
   },
@@ -59,8 +66,8 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
+            working with JavaScript, React, Node.js, .NET Core, .NET Framework, Express, PostgreSQL,
+            Sequelize, SQL server, HTML, CSS, and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>

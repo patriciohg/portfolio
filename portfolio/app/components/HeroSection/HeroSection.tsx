@@ -25,8 +25,7 @@ const HeroSection = () => {
                 </h1>
         
                 <p className="text-[#ADB7BE]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Esse praesentium architecto officia, doloribus tempora delectus.
+                Computer Science Engineer. Currently, I am a full stack developer. I have worked with programming languages such as Python, C#, Javascript, and Java, and have developed web applications using frameworks like React and Node. I also have experience in freelance work, having led a development project for the university over a period of one year.
                 </p>    
                 <div>
                     <button className='px-6 py-3 w-full rounded-full mr-4 bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 text-white'>

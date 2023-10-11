@@ -3,8 +3,8 @@ pipeline {
     environment {
         IMAGE_NAME = 'portfolio'
         IMAGE_TAG = 'latest'
-        DOCKER_USERNAME = 'patriciohg'
-        DOCKER_PASSWORD = 'pandacanibal1'
+        DOCKER_USERNAME = 'USERNAME'
+        DOCKER_PASSWORD = 'PASSWORD'
         CONTAINER_NAME = 'portfolio_container'
         NETWORK_NAME = 'nginx_network'
     }

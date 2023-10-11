@@ -1,0 +1,96 @@
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+    error_log  /var/log/nginx/error.log notice;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  _;
+        root         /usr/share/nginx/html;
+        proxy_connect_timeout 600s;
+        proxy_send_timeout 600s;
+        proxy_read_timeout 600s;
+        send_timeout 600s;
+
+        # Load configuration files for the default server block.
+        #include /etc/nginx/default.d/*.conf;
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+
+
+    server {
+        listen       80;
+        server_name  _;
+        server_tokens off;
+
+        location /portafolio/ {
+            if (-f /opt/maintenance/maintenance.on) {
+                return 503;
+            }
+            #root     /opt/dist;
+            root /usr/share/nginx/html;
+            index    index.html index.htm;
+            include  /etc/nginx/mime.types;
+            try_files $uri $uri/ /index.html;
+
+            add_header Strict-Transport-Security "max-age=31536000; includeSubdomains; preload";
+            add_header X-Content-Type-Options "nosniff" always;
+            add_header X-Frame-Options "SAMEORIGIN" always;
+            add_header Referrer-Policy "origin-when-cross-origin";
+            add_header Content-Security-Policy "worker-src blob:;img-src 'self' blob: data: *.microsoft.com;script-src 'self' 'unsafe-inline' 'unsafe-eval' *.microsoft.com" always;
+            add_header X-XSS-Protection "1; mode=block";
+
+            expires -1;
+            add_header Pragma "no-cache";
+            add_header Cache-Control "no-store, must-revalidate";
+        }
+
+        error_page 503 /503.html;
+        location = /503.html {
+            root /opt/maintenance/;
+            try_files $uri $uri/ /index.html;
+        }
+    }
+    client_max_body_size 100M;
+}

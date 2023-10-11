@@ -46,7 +46,7 @@ pipeline {
                     }
                 }
                 sh """
-                    docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -p 3000:80 $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+                    docker run -d --name ${CONTAINER_NAME} --network ${NETWORK_NAME} -e "NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx" -p 3000:80 -d --restart=always $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
                 """
             }
         }

@@ -8,17 +8,21 @@ const TAB_DATA: Tabdata[] = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
+        <li>C#</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Java</li>
+        <li>Nodejs</li>
         <li>.NET Core</li>
         <li>.NET Framework</li>
-        <li>Node.js</li>
+        <li>React</li>
         <li>Express</li>
         <li>SQL Server</li>
+        <li>Graphql</li>
         <li>MongoDB</li>
         <li>PostgreSQL</li>
         <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>React</li>
+        <li>EntityFramework</li>        
       </ul>
     ),
   },
@@ -65,9 +69,9 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript, React, Node.js, .NET Core, .NET Framework, Express, PostgreSQL,
-            Sequelize, SQL server, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
+            working with JavaScript, C#, Java, using differents frameworks such as React, .NET Core, .NET Framework, Express, 
+            also different databases such as MongoDB, PostgreSQL, Sequelize, SQL server, Graphql and Git. I am a quick learner 
+            and I am always looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
           <div className="flex flex-row justify-start mt-8">

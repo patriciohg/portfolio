@@ -1,6 +1,6 @@
 "use client";
 import React, { useTransition, useState } from "react";
-import TabButton from "../TabButton/TabButton";
+import TabButton from "./TabButton";
 
 const TAB_DATA: Tabdata[] = [
   {

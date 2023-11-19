@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
-import ProjectCard from "../Projectcard/projectCard";
-import ProjectTag from "../ProjectTag/ProjectTag";
+import ProjectCard from "./projectCard";
+import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
 const projectsData: projects[] = [
@@ -18,7 +18,7 @@ const projectsData: projects[] = [
     id: 2,
     title: "Netflix Clone",
     description: "Netflix clone using Nextjs and MongoDB",
-    image: "/images/projects/2.png",
+    image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
@@ -30,13 +30,13 @@ const projectsData: projects[] = [
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "https://oftalapp.cl/",
+    previewUrl: "https://oftalapp.cl",
   },
   {
     id: 4,
     title: "App Finanzas personales",
     description: "Project 4 description",
-    image: "/images/projects/4.png",
+    image: "/images/projects/3.png",
     tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
@@ -45,7 +45,7 @@ const projectsData: projects[] = [
     id: 5,
     title: "Ecommerce Web Application",
     description: "Ecommerce web application using Vuejs and Firebase",
-    image: "/images/projects/5.png",
+    image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
@@ -54,7 +54,7 @@ const projectsData: projects[] = [
     id: 6,
     title: "Full-stack Roadmap",
     description: "Project 5 description",
-    image: "/images/projects/6.png",
+    image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",

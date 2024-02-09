@@ -16,7 +16,7 @@ const HeroSection = () => {
                     </span>
                     <br />
                     <TypeAnimation
-                        sequence={['Patricio', 2000, 'A Full Stack Developer', 2000, 'A Data Scientist Entusiast', 2000, 'A Freelancer', 2000]}
+                        sequence={['Patricio', 2000, 'A Full Stack Developer', 2000, 'A Data Scientist Enthusiast', 2000, 'A Freelancer', 2000]}
                         wrapper='span'
 
                     />
